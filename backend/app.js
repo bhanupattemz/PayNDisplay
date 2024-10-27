@@ -1,6 +1,6 @@
 const Express = require("express")
 const app = Express()
-const cors = require("cors")
+
 const Razorpay = require("razorpay");
 const crypto = require("crypto")
 const mongoose = require("mongoose")
@@ -10,7 +10,6 @@ require("dotenv").config()
 app.use(Express.json())
 app.use(Express.urlencoded({ extended: true }))
 
-app.use(cors())
 
 
 app.post("/api/v1/create-order", async (req, res) => {
