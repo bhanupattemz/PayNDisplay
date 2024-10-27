@@ -41,7 +41,7 @@ function App() {
     setLoading(true); 
 
     try {
-      const { data } = await axios.post("http://localhost:8000/api/v1/create-order", {
+      const { data } = await axios.post("/api/v1/create-order", {
         amount: 10,
         receipt: `order_rcptid_${Date.now()}`
       });
@@ -56,7 +56,7 @@ function App() {
         order_id: order.id,
         handler: async (response) => {
           try {
-            const result = await axios.post("http://localhost:8000/api/v1/order/validate", {
+            const result = await axios.post("/api/v1/order/validate", {
               data: response,
               memberData: {
                 player: playerName,
